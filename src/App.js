@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AppForm from './componentes/AppForm';
 import logo from './logo.svg';
 //import './App.css';
@@ -25,7 +25,9 @@ function App() {
     }
   }
 
+ useEffect(()=>{
   fnRead();
+ },[]);
   
   //// DELETE - Eliminar - fnDelete ////
   const [idActual, setIdActual] = useState("");
