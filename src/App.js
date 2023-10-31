@@ -3,7 +3,7 @@ import AppForm from './componentes/AppForm';
 import logo from './logo.svg';
 //import './App.css';
 import C01componente from './pagina/C01componente';
-import { collection, onSnapshot, query } from 'firebase/firestore';
+import { collection, deleteDoc, doc, onSnapshot, query } from 'firebase/firestore';
 import { db } from './componentes/firebase';
 
 function App() {
@@ -31,7 +31,12 @@ function App() {
   
   //// DELETE - Eliminar - fnDelete ////
   const [idActual, setIdActual] = useState("");
-  const fnDelete = (xId) => {
+  const fnDelete =async (xId) => {
+    if (window.confirm("confirmar para eliminar")){
+      await deleteDoc(doc(db,"persona",xId));
+      alert("Se elminino con exito...");
+    }
+
 
   }
 
