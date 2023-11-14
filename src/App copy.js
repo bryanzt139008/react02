@@ -25,19 +25,17 @@ function App() {
     }
   }
 
- useEffect(()=>{
-  fnRead();
- },[]);
+  useEffect(() =>{
+    fnRead();
+  },[]);
   
   //// DELETE - Eliminar - fnDelete ////
   const [idActual, setIdActual] = useState("");
-  const fnDelete =async (xId) => {
-    if (window.confirm("confirmar para eliminar")){
-      await deleteDoc(doc(db,"persona",xId));
-      alert("Se elminino con exito...");
-    }
-
-
+  const fnDelete = async (xId) => {
+   if(window.confirm("Confirme para eliminar")){
+    await deleteDoc(doc(db, "persona", xId));
+    alert("Se elimino con exito...");
+   }
   }
 
   return (
