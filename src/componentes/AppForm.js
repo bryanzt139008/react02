@@ -38,7 +38,7 @@ const AppForm = (props) => {
     const handleStatusChange = (e) => {
         const {name,value} = e.target;
         setObjeto({...objeto,[name]:value});
-        //console.log({name,value});
+        console.log({name,value});
     }
 
     //validacion
